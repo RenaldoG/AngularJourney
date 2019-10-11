@@ -1,0 +1,20 @@
+<div class="StepIndicatorStyle">
+
+   <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+      {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+    </button>-->
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+             <app-employee-details></app-employee-details>
+             <ng-template matStepLabel>Employee</ng-template>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <app-inventory-check-list></app-inventory-check-list>
+            <ng-template matStepLabel>Inventory CheckList</ng-template>
+        </mat-step>
+        <mat-step>
+            <app-complete-inventory-order></app-complete-inventory-order>
+            <ng-template matStepLabel>Complete Inventory</ng-template>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

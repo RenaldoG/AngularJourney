@@ -1,0 +1,8 @@
+.formStyle {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropDownStyle {
+      margin-top: 30px;
+  }
