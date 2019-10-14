@@ -1,4 +1,29 @@
-    You are now done.
-    <div>
-      <h1>Done Son!</h1>
-    </div>
+    <form [formGroup]="secondFormGroup">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <!--Number Column-->
+            <ng-container matColumnDef="Price">
+              <th mat-header-cell *matHeaderCellDef> Price </th>
+              <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
+            </ng-container>
+                <!-- Name Column -->
+            <ng-container matColumnDef="Name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+            </ng-container>
+                <!-- Weight Column -->
+            <ng-container matColumnDef="Amount">
+              <th mat-header-cell *matHeaderCellDef> Amount </th>
+              <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
+            </ng-container>
+                <!-- Symbol Column -->
+            <ng-container matColumnDef="IsStocked">
+              <th mat-header-cell *matHeaderCellDef> Stocked </th>
+              <td mat-cell *matCellDef="let element"> {{element.IsStocked}} </td>
+            </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-card>
+            <button mat-button matStepperPrevious>Back</button>
+        </mat-card>
+</form>

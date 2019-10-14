@@ -1,40 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
-export interface Inventory {
-  name: string;
-  position: number;
-  amount: number;
-  stocked: boolean;
-}
+import { InventoryItem } from '../../../../../Models/Inventory/InventoryItem';
 
-const ELEMENT_DATA: Inventory[] = [
-  {position: 1, name: 'Beer',         amount: 4, stocked: true},
-  {position: 2, name: 'Milk',         amount: 5, stocked: true},
-  {position: 3, name: 'Noodles',      amount: 4, stocked: true},
-  {position: 4, name: 'Pringles',     amount: 6, stocked: false},
-  {position: 5, name: 'Oros',         amount: 5, stocked: true},
-  {position: 6, name: 'Steak',        amount: 7, stocked: true},
-  {position: 7, name: 'Toilet Paper', amount: 6, stocked: true},
-  {position: 8, name: 'Tooth Paste',  amount: 5, stocked: false},
-  {position: 9, name: 'Braai',        amount: 6, stocked: true},
-  {position: 10, name: 'Pie',         amount: 7, stocked: true},
-];
+import { InventoryData } from '../../../../../TestData/InventoryData';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({  selector: 'app-inventory-check-list',  templateUrl: './inventory-check-list.component.html',
   styleUrls: ['./inventory-check-list.component.css']
 })
 export class InventoryCheckListComponent implements OnInit {
-  secondFormGroup: FormGroup;
-  displayedColumns: string[] = ['position', 'name', 'amount', 'stocked'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['Price', 'Name', 'Amount', 'IsStocked']
+  columnsToDisplay: string[] = this.displayedColumns.slice();
+  inventoryList: InventoryItem[] = InventoryData;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
   }
+
+  /*addColumn() {
+    const randomColumn = Math.floor(Math.random() * this.displayedColumns.length);
+    this.columnsToDisplay.push(this.displayedColumns[randomColumn]);
+  }
+
+  removeColumn() {
+    if (this.columnsToDisplay.length) {
+      this.columnsToDisplay.pop();
+    }
+
+    shuffle() {
+      let currentIndex = this.columnsToDisplay.length;
+      while ()
+      let temp = this.columnsToDisplay[currentIndex];
+    }
+  }*/
 
 }
