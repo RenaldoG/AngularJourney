@@ -1,0 +1,12 @@
+.headerStyle {
+    background-color: #015fb8;
+}
+
+h1, h2, p, a {
+    color: aliceblue;
+}
+button {
+    margin: 5px;
+    background-color: #3f83b1;
+    color: aliceblue;
+}

@@ -1,0 +1,14 @@
+.Shell {
+    padding: 15px;
+    background: rgba(36,36,36,1);
+    color: #FFFFFF;
+    min-width: 90%;
+    min-height: 100%;
+    text-align: center;
+}
+
+.ShellTitle {
+    text-align: center
+}
+
+

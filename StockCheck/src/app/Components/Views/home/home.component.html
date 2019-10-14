@@ -1,0 +1,7 @@
+<div class="homeStyle">
+    <div *ngIf=!StockTakeActive>
+        <h2>Start Stock take?</h2>
+        <button mat-raised-button (click)="startInventoryCheck()">Start StockTake</button>
+    </div>
+    <app-step-indicator *ngIf=StockTakeActive></app-step-indicator>
+</div>
