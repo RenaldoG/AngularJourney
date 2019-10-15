@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule }    from '@angular/common/http';
 
 //Angular Material
 import { MatButtonModule } from '@angular/material/button';
@@ -49,7 +50,8 @@ import { StepIndicatorDetailsComponent } from './Components/Actions/Workflow/ste
     BrowserAnimationsModule,
     MatSelectModule,
     MatTableModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
