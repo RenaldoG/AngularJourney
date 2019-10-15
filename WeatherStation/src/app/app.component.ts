@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class AppComponent {
   title = 'WeatherStation';
-  readonly url = "https://localhost:44327/api/product";
+  readonly url = "https://localhost:44304/weatherforecast";
 
   posts: any;
 
