@@ -11,10 +11,23 @@ namespace WeatherStation.API.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
+        private static readonly List<Weather> Summaries = new List<Weather>
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            new Weather() { Id = 0, Name = "Freezing", Temprature = "22", Test = "ola" },
+            new Weather() { Id = 1, Name = "nkdnfknd", Temprature = "44", Test = "ola" },
+            new Weather() { Id = 2, Name = "sdfsdf", Temprature = "5", Test = "ola" },
+            new Weather() { Id = 3, Name = "dgdf", Temprature = "66", Test = "ola" },
+            new Weather() { Id = 4, Name = "dfddd", Temprature = "272", Test = "ola" },
+            new Weather() { Id = 5, Name = "aaaaa", Temprature = "96", Test = "ola" },
+            new Weather() { Id = 6, Name = "ghghghgh", Temprature = "88", Test = "ola" },
+            new Weather() { Id = 7, Name = "redfgfd", Temprature = "44", Test = "ola" },
         };
+
+        private static readonly string[] dddd = new string[]
+        {
+            "eerre", "dfgdfgfdg", "aaaaaa"
+        };
+
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -24,16 +37,20 @@ namespace WeatherStation.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<Weather> Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return Summaries;
         }
+    }
+
+    public class Weather
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Temprature { get; set; }
+
+        public string Test { get; set; }
     }
 }

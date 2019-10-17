@@ -1,12 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
 
 @Component({
   selector: 'app-root',
@@ -14,15 +6,5 @@ const httpOptions = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WeatherStation';
-  readonly url = "https://localhost:44304/weatherforecast";
-
-  posts: any;
-
-  constructor(private http: HttpClient) {}
-
-  getPosts() {
-    console.log("isHit");
-    this.posts = this.http.get(this.url, httpOptions)
-  }
+  constructor() {}
 }
